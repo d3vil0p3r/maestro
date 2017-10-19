@@ -13,5 +13,4 @@ before_script:
 
 script:
   - docker run maestro bash -c "./vendor/bin/phpunit"
-  - docker run maestro bash -c "./vendor/bin/phpunit --coverage-text"
-  - docker run maestro bash <(curl -s https://codecov.io/env)
+  - docker run maestro bash -c "./vendor/bin/phpunit --coverage-text=coverage.txt; cat coverage.txt"
