@@ -15,7 +15,5 @@ script:
   - docker run maestro bash -c "./vendor/bin/phpunit"
   - docker run maestro bash -c "./vendor/bin/phpunit --coverage-text"
   - docker run maestro bash -c "bash <(curl -s https://codecov.io/env)"
-
-after_success:
   - docker exec -d maestro bash "./vendor/bin/phpunit --coverage-clover coverage.xml"
   - docker exec -d maestro bash "bash <(curl -s https://codecov.io/bash)"
